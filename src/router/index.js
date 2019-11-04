@@ -12,9 +12,6 @@ const IndexRoute = {
 let routes = [
   {
     path: "/",
-    // component: () =>
-    //     import(/* webpackChunkName: "login" */ "~@/views/Home.vue"),
-    // name: "home",
     redirect: "/home"
   },
   IndexRoute,
