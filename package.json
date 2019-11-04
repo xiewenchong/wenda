@@ -41,12 +41,17 @@
   "postcss": {
     "plugins": {
       "autoprefixer": {
-        "overrideBrowserslist.": ["Android >= 4.0", "iOS >= 7"]
+        "overrideBrowserslist.": [
+          "Android >= 4.0",
+          "iOS >= 7"
+        ]
       },
       "postcss-pxtorem": {
-          "rootValue": 37.5,
-          "propList": ["*"]
-        }
+        "rootValue": 37.5,
+        "propList": [
+          "*"
+        ]
+      }
     }
   },
   "browserslist": [
