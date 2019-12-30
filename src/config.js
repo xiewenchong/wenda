@@ -1,6 +1,7 @@
 import Vue from "vue";
-import filters from "@/common/filters";
+import filters from "~@/common/filters";
 import "./components";
+import "~assets/icons";
 import "lib-flexible/flexible";
 
 // 消除 click 移动浏览器300ms延迟
@@ -36,4 +37,4 @@ let vantUI = [
 vantUI.forEach(componentName => {
   Vue.use(componentName, vantUI[componentName]);
 });
-Vue.prototype.$toast = Toast;
+// Vue.prototype.$toast = Toast;
