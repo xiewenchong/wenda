@@ -1,5 +1,5 @@
 import { getStore, setStore } from "~common/util/util.js";
-import api from "~@/http/api/user.js";
+import api from "@/http/api/user.js";
 
 const user = {
   state: {

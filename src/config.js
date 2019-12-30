@@ -1,5 +1,5 @@
 import Vue from "vue";
-import filters from "~@/common/filters";
+import filters from "~common/filters";
 import "./components";
 import "~assets/icons";
 import "lib-flexible/flexible";

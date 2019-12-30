@@ -114,8 +114,8 @@ module.exports = {
     loaderOptions: {
       sass: {
         prependData: `
-			@import "~@/common/style/mixin.scss";
-			@import "~@/common/style/_var.scss";
+			@import "~common/style/mixin.scss";
+			@import "~common/style/_var.scss";
 				`
       }
     }

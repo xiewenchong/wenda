@@ -1,6 +1,6 @@
 import axios from "axios";
 import router from "../router";
-import store from "~@/store";
+import store from "~store";
 /**
  * 自定义Axios实例
  */
