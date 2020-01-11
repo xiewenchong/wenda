@@ -15,7 +15,7 @@ const user = {
       state.name = name;
     }
   },
-
+  getters: {},
   actions: {
     // 登录
     Login({ commit }, userInfo) {

@@ -18,9 +18,9 @@ module.exports = {
     open: false, // 是否自动打开浏览器页面
     host: "0.0.0.0", // 指定使用一个 host，默认是 localhost
     port: 8080, // 端口地址
-    https: false, // 使用https提供服务
+    https: false // 使用https提供服务
     // 这里写你调用接口的基础路径，来解决跨域，如果设置了代理，那你本地开发环境的axios的baseUrl要写为 '' ，即空字符串
-    proxy: "http://api.zhuishushenqi.com"
+    // proxy: "http://api.zhuishushenqi.com"
   },
 
   chainWebpack: config => {
@@ -31,41 +31,41 @@ module.exports = {
     });
 
     // cdn配置cdn预加载使用-------------------------------------------------------------------
-    const externals = {
-      vue: "Vue",
-      "vue-router": "VueRouter",
-      vuex: "Vuex",
-      axios: "axios",
-      vant: "vant"
-    };
-    const cdn = {
-      // 开发环境
-      dev: {
-        css: ["https://cdn.jsdelivr.net/npm/vant@2.2/lib/index.css"],
-        js: []
-      },
-      // 生产环境
-      build: {
-        css: ["https://cdn.jsdelivr.net/npm/vant@2.2/lib/index.css"],
-        js: [
-          "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js",
-          "https://cdn.jsdelivr.net/npm/vue-router@3.1.3/dist/vue-router.min.js",
-          "https://cdn.jsdelivr.net/npm/vuex@3.0.1/dist/vuex.min.js",
-          "https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js",
-          "https://cdn.jsdelivr.net/npm/vant@2.2.10/lib/vant.min.js"
-        ]
-      }
-    };
-    config.externals(externals);
-    config.plugin("html").tap(args => {
-      if (IS_PROD) {
-        args[0].cdn = cdn.build;
-      }
-      if (process.env.NODE_ENV === "development") {
-        args[0].cdn = cdn.dev;
-      }
-      return args;
-    });
+    // const externals = {
+    //   vue: "Vue",
+    //   "vue-router": "VueRouter",
+    //   vuex: "Vuex",
+    //   axios: "axios",
+    //   vant: "vant"
+    // };
+    // const cdn = {
+    //   // 开发环境
+    //   dev: {
+    //     css: ["https://cdn.jsdelivr.net/npm/vant@2.2/lib/index.css"],
+    //     js: []
+    //   },
+    //   // 生产环境
+    //   build: {
+    //     css: ["https://cdn.jsdelivr.net/npm/vant@2.2/lib/index.css"],
+    //     js: [
+    //       "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js",
+    //       "https://cdn.jsdelivr.net/npm/vue-router@3.1.3/dist/vue-router.min.js",
+    //       "https://cdn.jsdelivr.net/npm/vuex@3.0.1/dist/vuex.min.js",
+    //       "https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js",
+    //       "https://cdn.jsdelivr.net/npm/vant@2.2.10/lib/vant.min.js"
+    //     ]
+    //   }
+    // };
+    // config.externals(externals);
+    // config.plugin("html").tap(args => {
+    //   if (IS_PROD) {
+    //     args[0].cdn = cdn.build;
+    //   }
+    //   if (process.env.NODE_ENV === "development") {
+    //     args[0].cdn = cdn.dev;
+    //   }
+    //   return args;
+    // });
     //----cdn---------------------------------------------------------------------------------
 
     //---------------compression-webpack-plugin插件  开启gzip压缩-start------------------------
